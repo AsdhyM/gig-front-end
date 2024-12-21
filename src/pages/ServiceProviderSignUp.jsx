@@ -1,6 +1,6 @@
 import React from 'react'
 
-const UserRegister = () => {
+const ServiceProviderSignUp = () => {
   return (
     <div>
         
@@ -8,4 +8,4 @@ const UserRegister = () => {
   )
 }
 
-export default UserRegister
+export default ServiceProviderSignUp
