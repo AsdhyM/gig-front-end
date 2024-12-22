@@ -5,7 +5,7 @@ import david_image from './david_image.png'
 import steve_image from './steve_image.png'
 import tom_image from './tom_image.png'
 import profile_icon from './profile_icon.png'
-
+import gig_logo_black from './gig_logo_black.png'
 
 export const assets = {
     gig_logo,
@@ -14,5 +14,6 @@ export const assets = {
     david_image,
     steve_image,
     tom_image,
-    profile_icon
+    profile_icon,
+    gig_logo_black
 }
