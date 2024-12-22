@@ -11,6 +11,7 @@ import ServiceProviderProfile from './pages/ServiceProviderProfile'
 import About from './pages/About'
 import Services from './pages/Services'
 import Navbar from './components/Navbar'
+import UserDashboard from './components/UserDashboard'
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/dashboard' element={<UserDashboard />} />
         <Route path='/serviceproviders' element={<ServiceProviders />} />
         <Route path='/usersignup' element={<UserSignUp />} />
         <Route path='/serviceprovidersignup' element={<ServiceProviderSignUp />} />
