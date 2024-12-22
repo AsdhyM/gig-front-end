@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {assets} from '../assets/assets'
 import { NavLink, useNavigate } from 'react-router-dom'
 
@@ -7,7 +7,13 @@ const Navbar = () => {
   const [token, setToken] = useState(true);
   const [showDropdown, setShowDropDown] = useState(false);
 
+  useEffect(() => {
+    const storedToken = localStorage.getItem('token');
+    setToken(!!storedToken);
+  }, []);
+
   const handleLogout = () => {
+    localStorage.removeItem('token');
     setToken(false);
     navigate('/login');
   };
@@ -32,6 +38,7 @@ const Navbar = () => {
               src={assets.ana_image}
               alt="Profile image"
               onClick={() => setShowDropDown(!showDropdown)}
+              aria-expanded={showDropdown}
             />
 
             {showDropdown && (

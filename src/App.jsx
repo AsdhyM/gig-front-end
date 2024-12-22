@@ -12,6 +12,7 @@ import About from './pages/About'
 import Services from './pages/Services'
 import Navbar from './components/Navbar'
 import UserDashboard from './components/UserDashboard'
+import PrivateRoute from './components/PrivateRoute'
 
 
 function App() {
@@ -20,13 +21,28 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route
+          path='dashboard'
+          element={
+            <PrivateRoute>
+              <UserDashboard />
+            </PrivateRoute>
+          }
+        />
         <Route path='/dashboard' element={<UserDashboard />} />
         <Route path='/serviceproviders' element={<ServiceProviders />} />
         <Route path='/usersignup' element={<UserSignUp />} />
         <Route path='/serviceprovidersignup' element={<ServiceProviderSignUp />} />
         <Route path='/userlogin' element={<UserLogin />} />
         <Route path='/serviceproviderlogin' element={<ServiceProviderLogin />} />
-        <Route path='/userprofile' element={<UserProfile />} />
+        <Route 
+          path='/userprofile' 
+          element={
+          <PrivateRoute>
+            <UserProfile />
+          </PrivateRoute>
+          }
+        />
         <Route path='/serviceproviderprofile' element={<ServiceProviderProfile />} />
         <Route path='/about' element={<About />} />
         <Route path='/services/:serviceproviderId' element={<Services />} />
